@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  background: #f4f6fa;
+  font-family: 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Arial', sans-serif;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 220px;
+  background: linear-gradient(135deg, #2d3a4b 80%, #3e4a5e 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.04);
+}
+
+.sidebar-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 32px 0 24px 0;
+  text-align: center;
+  letter-spacing: 2px;
+  border-bottom: 1px solid #3e4a5e;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.menu-item {
+  padding: 18px 32px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  font-size: 1.1rem;
+}
+
+.menu-item:hover,
+.menu-item.active {
+  background: #1e2530;
+  color: #61dafb;
+}
+
+.content {
+  flex: 1;
+  padding: 48px 40px;
+  background: #f4f6fa;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.content-inner {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  padding: 40px 32px;
+  min-height: 400px;
+  font-size: 1.2rem;
+  color: #333;
+  animation: fadeIn 0.4s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(16px);}
+  to { opacity: 1; transform: translateY(0);}
+}
