@@ -10,7 +10,8 @@ function Dashboard() {
 const menuItems = [
   { key: '/dashboard', label: '基座菜单页' },
   { key: '/sub-react', label: 'React子项目模块' },
-  { key: '/sub-vue', label: 'Vue子项目模块' }
+  { key: '/sub-vue', label: 'Vue子项目模块' },
+  { key: '/sub-arco', label: 'sub-arco' }
 ];
 
 function App() {

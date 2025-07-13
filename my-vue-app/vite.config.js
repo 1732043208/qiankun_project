@@ -13,5 +13,6 @@ export default defineConfig({
     vue(),
     qiankun('sub-vue', {
       useDevMode: true, // 开发模式下使用qiankun
-    })]
+    })
+  ]
 })

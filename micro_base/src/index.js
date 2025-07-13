@@ -25,6 +25,11 @@ const apps = [
     entry: '//localhost:3002',
     container: '#sub-app',
     activeRule: '/sub-vue',
+  },{
+    name: 'sub-arco',
+    entry: '//localhost:5172',
+    container: '#sub-app',
+    activeRule: '/sub-arco',
   },
 ]
 // 2.注册子应用
