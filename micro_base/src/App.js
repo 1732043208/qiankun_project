@@ -22,22 +22,23 @@ function App() {
     <div className="admin-layout">
       <aside className="sidebar">
         <div className="sidebar-title">qiankun微前端</div>
+        <div style={{width: '200px', height: '40px'}} className={'.xixi'}>123</div>
         <ul className="menu">
           {menuItems.map(item => (
-            <li
-              key={item.key}
-              className={location.pathname === item.key ? 'menu-item active' : 'menu-item'}
-              onClick={() => navigate(item.key)}
-            >
-              {item.label}
-            </li>
+              <li
+                  key={item.key}
+                  className={location.pathname === item.key ? 'menu-item active' : 'menu-item'}
+                  onClick={() => navigate(item.key)}
+              >
+                {item.label}
+              </li>
           ))}
         </ul>
       </aside>
       <main className="content">
         {/* 主应用渲染区域 */}
         <Routes>
-          <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
         {/* 子应用渲染区域 */}
         <div id="sub-app"/>
