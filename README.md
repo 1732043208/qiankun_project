@@ -1,6 +1,17 @@
+### 目录结构
+
+ ```
+├── qiankun_project                     
+│   ├── micro_base           # 封装后台页面中使用的请求api
+│   ├── my-react-app         # React Demo应用
+│   ├── my-vue-app           # Vue Demo应用
+│   ├── my-arco-app          # Arco-design Demo应用
+│   ├── your_sub_project     # 子应用项目
+```
 ## 基础搭建
 ### 基座应用配置
 ```javascript
+// micro_base/src/main.tsx
 import {registerMicroApps, start} from 'qiankun';
 
 // 1. 微应用列表
@@ -25,17 +36,20 @@ start({
   // strictStyleIsolation: true,        // 可选：Shadow DOM严格隔离
   // experimentalStyleIsolation: true   // 可选：scoped CSS隔离
 })
+
 ```
 ### 子应用配置
 
 #### 1. router 文件配置
 ```javascript
+// my-arco-app/src/router.ts
 // 修改基础路由
 history: createWebHistory('/sub-arco')  // 对应基座配置的路由名称
 ```
 
 #### 2. vite.config 配置
 ```javascript
+// my-arco-app/config/vite.config.base.ts
 import qiankun from 'vite-plugin-qiankun'
 
 export default defineConfig({
@@ -50,6 +64,7 @@ export default defineConfig({
 
 #### 3. main.js 入口文件配置
 ```javascript
+// my-arco-app/src/main.ts
 import { renderWithQiankun, qiankunWindow } from 'vite-plugin-qiankun/dist/helper'
 
 let appInstance: any = null
@@ -88,6 +103,7 @@ qiankunWindow.__POWERED_BY_QIANKUN__ ? initQianKun() : render(null)
 ### 基座应用配置
 #### 方式一：新建js文件，创建action实例
 ```javascript
+// micro_base/src/action.ts
 import {initGlobalState} from 'qiankun';
 
 const state = {
@@ -109,6 +125,7 @@ export default actions
 
 #### 方式二：通过props属性将参数传递给子应用
 ```javascript
+// micro_base/src/main.tsx
 const apps = [{
         name: 'sub-arco',
         entry: '//localhost:5173',
@@ -123,6 +140,7 @@ const apps = [{
 ### 子应用配置
 #### 在mount中的_props中获取基座传递的参数，以及调用onGlobalStateChange开启全局监听
 ```javascript
+// my-arco-app/src/main.ts
 const initQianKun = () => {
     renderWithQiankun({
         mount(_props) {
