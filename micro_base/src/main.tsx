@@ -3,7 +3,6 @@ import './index.css'
 import App from './App.tsx'
 import {registerMicroApps, start} from 'qiankun';
 import {BrowserRouter} from 'react-router-dom';
-import actions from "./action.ts";
 
 createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
@@ -31,8 +30,8 @@ const apps = [
         container: '#sub-app',
         activeRule: '/sub-arco',
         props: {
-            actions
-        },
+            userName: '张三'
+        }
     },
 ]
 // 2.注册子应用

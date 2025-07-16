@@ -6,12 +6,11 @@ const state = {
     },
 };
 // 初始化 state
-const actions = initGlobalState(state);
+const actions: any = initGlobalState(state);
 
 // 在当前应用监听全局状态
-actions.onGlobalStateChange((state, prev) => {
-    // state: 变更后的状态; prev 变更前的状态
-    console.log(state, prev);
+actions.onGlobalStateChange((newValue: any, oldValue: any) => {
+    console.log('基座应用：', newValue, oldValue);
 });
 
 export default actions
