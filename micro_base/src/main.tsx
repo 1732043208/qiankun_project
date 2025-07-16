@@ -3,6 +3,7 @@ import './index.css'
 import App from './App.tsx'
 import {registerMicroApps, start} from 'qiankun';
 import {BrowserRouter} from 'react-router-dom';
+import actions from "./action.ts";
 
 createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
@@ -29,6 +30,9 @@ const apps = [
         entry: '//localhost:5173',
         container: '#sub-app',
         activeRule: '/sub-arco',
+        props: {
+            actions
+        },
     },
 ]
 // 2.注册子应用
@@ -40,6 +44,7 @@ registerMicroApps(apps, {
 
 // 3.启动qiankun
 start({
+    prefetch: false, // 预加载子应用
     // strictStyleIsolation: true, //开启严格的样式隔离模式 shadow dom
     // experimentalStyleIsolation: true //实验性的样式隔离，主要是通过 scoped css 来实现的
 })

@@ -1,5 +1,6 @@
 import {useNavigate, useLocation, Routes, Route} from 'react-router-dom';
 import './App.css'
+import actions from "./action.ts";
 
 const menuItems = [
     {key: '/dashboard', label: '基座菜单页'},
@@ -11,12 +12,18 @@ const menuItems = [
 function App() {
     const navigate = useNavigate();
     const location = useLocation();
-
+    const titleClick = () => {
+        actions.setGlobalState({
+            subArco: {
+                userName: 'qiankun-arco1'
+            }
+        })
+    }
     return (
         <>
             <div className="admin-layout">
                 <aside className="sidebar">
-                    <div className="sidebar-title">qiankun微前端</div>
+                    <div className="sidebar-title" onClick={() => titleClick()}>qiankun微前端</div>
                     <ul className="menu">
                         {menuItems.map(item => (
                             <li
