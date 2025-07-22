@@ -2,7 +2,7 @@
 
  ```
 ├── qiankun_project                     
-│   ├── micro_base           # 封装后台页面中使用的请求api
+│   ├── micro_base           # 基座应用
 │   ├── my-react-app         # React Demo应用
 │   ├── my-vue-app           # Vue Demo应用
 │   ├── my-arco-app          # Arco-design Demo应用
