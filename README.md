@@ -3,10 +3,10 @@
  ```
 ├── qiankun_project                     
 │   ├── micro_base           # 基座应用
-│   ├── my-react-app         # React Demo应用
-│   ├── my-vue-app           # Vue Demo应用
-│   ├── my-arco-app          # Arco-design Demo应用
-│   ├── your_sub_project     # 子应用项目
+│   ├── my-react-app         # React Demo子应用
+│   ├── my-vue-app           # Vue Demo子应用
+│   ├── my-arco-app          # Arco-design Demo子应用
+│   ├── your_sub_project     # 更多的子应用项目
 ```
 ## 基础搭建
 ### 基座应用配置
